@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro section with dropdown navigation</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+    <header>
+        <h1 class="logo">snap</h1>
+        <img class="menu-image" src="https://raw.githubusercontent.com/ydctnr/Intro-Section-With-Dropdown-Navigation/f2f22a3a43282a3545b0282b7a32c2146e6dfc50/images/icon-menu.svg">
+        <div class="open-menu">
+            <img class="close-menu" src="https://raw.githubusercontent.com/ydctnr/Intro-Section-With-Dropdown-Navigation/f2f22a3a43282a3545b0282b7a32c2146e6dfc50/images/icon-close-menu.svg">
+            <nav>
+                <ul class="nav-link">
+                    <li>
+                        <a href="#" class="dropdown-btn">Features<img class="arrow-down" src="https://raw.githubusercontent.com/ydctnr/Intro-Section-With-Dropdown-Navigation/f2f22a3a43282a3545b0282b7a32c2146e6dfc50/images/icon-arrow-down.svg"></a>
+                        <div id="featuresDropdown" class="dropdown content dropdown-content1">
+                            <a href="#"><img src="https://raw.githubusercontent.com/ydctnr/Intro-Section-With-Dropdown-Navigation/f2f22a3a43282a3545b0282b7a32c2146e6dfc50/images/icon-todo.svg">Todo List</a>
+                            <a href="#"><img src="https://raw.githubusercontent.com/ydctnr/Intro-Section-With-Dropdown-Navigation/f2f22a3a43282a3545b0282b7a32c2146e6dfc50/images/icon-calendar.svg">Calendar</a>
+                            <a href="#"><img src="https://raw.githubusercontent.com/ydctnr/Intro-Section-With-Dropdown-Navigation/f2f22a3a43282a3545b0282b7a32c2146e6dfc50/images/icon-reminders.svg">Reminders</a>
+                            <a href="#"><img src="https://raw.githubusercontent.com/ydctnr/Intro-Section-With-Dropdown-Navigation/f2f22a3a43282a3545b0282b7a32c2146e6dfc50/images/icon-planning.svg">Planning</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-btn">Company<img class="arrow-down" src="https://raw.githubusercontent.com/ydctnr/Intro-Section-With-Dropdown-Navigation/f2f22a3a43282a3545b0282b7a32c2146e6dfc50/images/icon-arrow-down.svg"></a>
+                        <div id="companyDropdown" class="dropdown content dropdown-content2">
+                            <a href="#">History</a>
+                            <a href="#">Our Team</a>
+                            <a href="#">Blog</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+            <div class="log-reg">
+                <a href="#"><button class="login">Login</button></a>
+                <a href="#"><button class="register">Register</button></a>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="div1">
+            <h1>Make remote work</h1>
+            <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+            <button>Learn more</button>
+            <div class="links">
+                <img src="https://raw.githubusercontent.com/ydctnr/Intro-Section-With-Dropdown-Navigation/f2f22a3a43282a3545b0282b7a32c2146e6dfc50/images/client-databiz.svg">
+                <img src="https://raw.githubusercontent.com/ydctnr/Intro-Section-With-Dropdown-Navigation/f2f22a3a43282a3545b0282b7a32c2146e6dfc50/images/client-audiophile.svg">
+                <img src="https://raw.githubusercontent.com/ydctnr/Intro-Section-With-Dropdown-Navigation/f2f22a3a43282a3545b0282b7a32c2146e6dfc50/images/client-meet.svg">
+                <img src="https://raw.githubusercontent.com/ydctnr/Intro-Section-With-Dropdown-Navigation/f2f22a3a43282a3545b0282b7a32c2146e6dfc50/images/client-maker.svg">
+            </div>
+        </div>
+        <div class="div2">
+            <img src="https://github.com/ydctnr/Intro-Section-With-Dropdown-Navigation/blob/main/images/image-hero-mobile.png?raw=true" alt="Hero Image" width="350px" height="350px">
+        </div>
+    </section>
+
+<script>
+    const answers = document.querySelectorAll('.dropdown.content');
+
+answers.forEach(answer => {
+    answer.style.display = 'none';
+});
+
+const icons = document.querySelectorAll('.arrow-down');
+
+icons.forEach(icon => {
+    icon.addEventListener('click', () => {
+
+        const answer = icon.parentElement.nextElementSibling;
+        if (answer.style.display === 'none') {
+            answer.style.display = 'block';
+
+            icon.src = 'https://raw.githubusercontent.com/ydctnr/Intro-Section-With-Dropdown-Navigation/f2f22a3a43282a3545b0282b7a32c2146e6dfc50/images/icon-arrow-up.svg';
+        } else {
+            answer.style.display = 'none';
+
+            icon.src = 'https://raw.githubusercontent.com/ydctnr/Intro-Section-With-Dropdown-Navigation/f2f22a3a43282a3545b0282b7a32c2146e6dfc50/images/icon-arrow-down.svg';
+        }
+    });
+});
+
+//for right side-bar menu//
+document.addEventListener('DOMContentLoaded', function() {
+    const menuImage = document.querySelector('.menu-image');
+    const openMenu = document.querySelector('.open-menu');
+    const closeMenu = document.querySelector('.close-menu');
+
+    menuImage.addEventListener('click', function() {
+
+        if (openMenu.style.display === 'none' || openMenu.style.display === '') {
+            openMenu.style.display = 'flex'; 
+        } else {
+            openMenu.style.display = 'none'; 
+        }
+    });
+
+    closeMenu.addEventListener('click', function() {
+
+        openMenu.style.display = 'none';
+    });
+});
+</script>
+
+</body>
+</html>
